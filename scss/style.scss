@@ -1,0 +1,380 @@
+// colors
+$white: #fff;
+$pink: hsl(322, 100%, 66%);
+$darkCian: hsl(192, 100%, 9%);
+$paleBlue: hsl(207, 100%, 98%);
+
+// fonts
+$header-font: "Poppins", sans-serif;
+$body-font: "Open Sans", sans-serif;
+
+//style
+$padding-box: 2vw 5vw;
+
+%text-style {
+  width: 70vw;
+  max-width: 500px;
+}
+
+%content-width {
+  width: 90vw;
+  max-width: 1400px;
+  margin: auto;
+}
+
+@mixin container($margin-top) {
+  margin: $margin-top auto;
+}
+
+@mixin button($color, $background, $padding-v, $padding-h, $border-radius) {
+  font-family: $header-font;
+  text-transform: capitalize;
+  color: $color;
+  background: $background;
+  border-radius: $border-radius;
+  border: 1px solid $pink;
+  padding: $padding-v $padding-h;
+  cursor: pointer;
+
+  &:hover {
+    color: $background;
+    background: $color;
+    -webkit-transition: color 1s, background-color 1s;
+    -moz-transition: color 1s, background-color 1s;
+    -o-transition: color 1s, background-color 1s;
+    transition: color 1s, background-color 1s;
+  }
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  /* Opera */
+  @-o-keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin background-image($image-top, $image-bottom, $height ) {
+  &::before {
+    background: url($image-top);
+    background-position: center;
+    background-size: cover;
+    content: " ";
+    height: $height;
+    width: 100%;
+    position: absolute;
+    top: -$height;
+  }
+
+  &::after {
+    background: url($image-bottom);
+    background-position: center;
+    background-size: cover;
+    content: " ";
+    height: 135px;
+    width: 100%;
+    position: absolute;
+    bottom: -135px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.content {
+  @extend %content-width;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 10px;
+  margin: 0;
+}
+
+header {
+  grid-area: header;
+  width: 90vw;
+  max-width: 1170px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  @include container(30px);
+
+  img {
+    width: 25vw;
+    max-width: 240px;
+  }
+
+  button {
+    @include button($pink, $white, 0.8vw, 20px, 50px);
+  }
+}
+
+main {
+  grid-area: main;
+  font-family: $body-font;
+  color: $darkCian;
+  @include container(40px);
+
+  h1 {
+    text-transform: capitalize;
+    font-size: 40px;
+    font-family: $header-font;
+  }
+
+  h2 {
+    text-transform: capitalize;
+    font-size: 36px;
+    font-family: $header-font;
+  }
+
+  #intro {
+    text-align: center;
+    height: calc(100vh - 40px - 40px);
+
+    p {
+      margin: auto;
+      @extend %text-style;
+    }
+
+    button {
+      @include button($white, $pink, calc(min(3vw, 20px)), calc(min(9vw, 90px)), 50px);
+      box-shadow: 0 3px 10px #c3c3c3;
+      margin: 35px 0;
+    }
+  }
+
+  #image {
+    img {
+      width: 80%;
+      display: block;
+      margin: auto;
+    }
+
+    .fadeIn {
+      animation: fadeIn 0.5s ease-in forwards;
+    }
+
+    @include keyframes(fadeIn) {
+       from { opacity: 0; transform: translateY(0px) scale(0.2);}
+       to   { opacity: 1; transform: translateY(-50px) scale(1);}
+     };
+  }
+
+  #numbers {
+    display: flex;
+    justify-content: space-around;
+
+    &>div {
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    .icon {
+      width: 2em;
+    }
+
+    .data {
+      font-size: 70px;
+      font-weight: 700;
+    }
+
+    .name {
+      text-align: center;
+      color: #9a9a9a;
+      font-size: 20px;
+      text-transform: capitalize;
+    }
+  }
+
+  #grow,
+  #conversation,
+  #users {
+    display: flex;
+    align-items: center;
+
+    p {
+      @extend %text-style;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &>div {
+      padding: $padding-box;
+    }
+  }
+
+  #conversation {
+    margin: 200px 0;
+  }
+
+  #grow,
+  #users {
+    background: $paleBlue;
+    margin: 150px 0;
+    position: relative;
+  }
+
+  #grow {
+    @include background-image("/images/bg-section-top-desktop-1.svg", "/images/bg-section-bottom-desktop-1.svg", 165px)
+  }
+
+  #users {
+    @include background-image("/images/bg-section-top-desktop-2.svg", "/images/bg-section-bottom-desktop-2.svg", 150px)
+  }
+
+  #build-community {
+    margin-bottom: 10em;
+    padding: 5vw 0;
+    text-align: center;
+
+    button {
+      @include button($white, $pink, 20px, 90px, 50px);
+      box-shadow: 0 3px 10px #c3c3c3;
+    }
+  }
+}
+
+footer {
+  grid-area: footer;
+  color: $white;
+  background: $darkCian;
+  font-family: $body-font;
+  position: relative;
+
+  &::before {
+    background: url('/images/bg-footer-top-desktop.svg');
+    background-position: center;
+    background-size: cover;
+    content: " ";
+    height: 158px;
+    width: 100%;
+    position: absolute;
+    top: -158px;
+  }
+
+  h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 0.8em;
+    width: 23em;
+    line-height: 1.5;
+    margin: 15px 0;
+
+    img {
+      float: left;
+      margin-right: 15px;
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    filter: brightness(0.7) invert(0) opacity(1);
+  }
+
+  #contacts {
+    display: flex;
+    justify-content: space-around;
+
+    .left, .right {
+      width: 40vw;
+    }
+
+    .image {
+      filter: brightness(0) invert(1) opacity(1);
+    }
+
+    .social {
+      i {
+      padding: 40px 15px 0 0;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      min-width: 300px;
+  
+      input {
+        flex: 1 1 60%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid white;
+      }
+    
+      button {
+        flex: 0 0 20%;
+        margin: 5px 0 0 20px;
+        @include button($white, $pink, 8px, 30px, 5px)
+      }
+    }
+  }
+
+  #disclaimer p {
+    text-align: center;
+    margin: 50px 0 10px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #numbers, #conversation {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #grow, #users {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  footer {
+
+    &::before {
+      background: url("/images/bg-footer-top-mobile.svg") no-repeat;
+      background-size: 100% 50%;
+      top: -70px;
+    }
+
+    #contacts {
+      flex-wrap: wrap-reverse;
+
+      .left, .right {
+        flex-direction: column-reverse;
+        width: 80vw;
+        margin: 40px auto;
+      }
+    }
+  }
+}
