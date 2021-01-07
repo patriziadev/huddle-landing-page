@@ -64,6 +64,12 @@ main {
   main #intro {
     text-align: center;
     height: calc(100vh - 40px - 40px); }
+    main #intro #intro-content {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
     main #intro p {
       margin: auto; }
     main #intro button {
@@ -231,10 +237,10 @@ footer {
     background-position: center;
     background-size: cover;
     content: " ";
-    height: 158px;
+    height: 140px;
     width: 100%;
     position: absolute;
-    top: -158px; }
+    top: -140px; }
   footer h3 {
     font-size: 22px;
     text-transform: uppercase; }
@@ -254,7 +260,8 @@ footer {
   footer #contacts {
     display: flex;
     justify-content: space-around; }
-    footer #contacts .left, footer #contacts .right {
+    footer #contacts .left,
+    footer #contacts .right {
       width: 40vw; }
     footer #contacts .image {
       filter: brightness(0) invert(1) opacity(1); }
@@ -264,7 +271,7 @@ footer {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      min-width: 300px; }
+      min-width: 280px; }
       footer #contacts form input {
         flex: 1 1 60%;
         padding: 10px;
@@ -295,19 +302,27 @@ footer {
     width: 100%; }
 
 @media screen and (max-width: 769px) {
-  #numbers, #conversation {
+  #numbers,
+  #conversation {
     flex-direction: column;
-    text-align: center; }
-  #grow, #users {
+    text-align: center;
+    margin: auto; }
+  #grow,
+  #users {
     flex-direction: column-reverse;
-    text-align: center; }
+    text-align: center;
+    margin: auto; }
   footer::before {
     background: url("/images/bg-footer-top-mobile.svg") no-repeat;
     background-size: 100% 50%;
     top: -70px; }
   footer #contacts {
     flex-wrap: wrap-reverse; }
-    footer #contacts .left, footer #contacts .right {
+    footer #contacts .left,
+    footer #contacts .right {
       flex-direction: column-reverse;
       width: 80vw;
-      margin: 40px auto; } }
+      margin: 40px auto; }
+      footer #contacts .left .fab span,
+      footer #contacts .right .fab span {
+        display: none; } }
