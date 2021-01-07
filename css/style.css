@@ -260,7 +260,8 @@ footer {
   footer #contacts {
     display: flex;
     justify-content: space-around; }
-    footer #contacts .left, footer #contacts .right {
+    footer #contacts .left,
+    footer #contacts .right {
       width: 40vw; }
     footer #contacts .image {
       filter: brightness(0) invert(1) opacity(1); }
@@ -301,11 +302,13 @@ footer {
     width: 100%; }
 
 @media screen and (max-width: 769px) {
-  #numbers, #conversation {
+  #numbers,
+  #conversation {
     flex-direction: column;
     text-align: center;
     margin: auto; }
-  #grow, #users {
+  #grow,
+  #users {
     flex-direction: column-reverse;
     text-align: center;
     margin: auto; }
@@ -315,7 +318,11 @@ footer {
     top: -70px; }
   footer #contacts {
     flex-wrap: wrap-reverse; }
-    footer #contacts .left, footer #contacts .right {
+    footer #contacts .left,
+    footer #contacts .right {
       flex-direction: column-reverse;
       width: 80vw;
-      margin: 40px auto; } }
+      margin: 40px auto; }
+      footer #contacts .left .fab span,
+      footer #contacts .right .fab span {
+        display: none; } }
