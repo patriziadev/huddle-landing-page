@@ -1,26 +1,26 @@
 {
-  "name": "huddle-landing-page",
-  "version": "1.0.0",
-  "description": "A simply landing page madr with HTML, SCSS and Javascript",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch scss -o css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/patriziadev/huddle-landing-page.git"
-  },
-  "author": "ZaBo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/patriziadev/huddle-landing-page/issues"
-  },
-  "homepage": "https://github.com/patriziadev/huddle-landing-page#readme",
-  "dependencies": {
-    "node-sass": "^6.0.1"
-  },
-  "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1"
-  }
+    "name": "huddle-landing-page",
+    "version": "1.1.0",
+    "description": "A simply landing page madr with HTML, SCSS and Javascript",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "scss": "node-sass --watch scss -o css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/patriziadev/huddle-landing-page.git"
+    },
+    "author": "ZABOL",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/patriziadev/huddle-landing-page/issues"
+    },
+    "homepage": "https://github.com/patriziadev/huddle-landing-page#readme",
+    "dependencies": {
+        "node-sass": "^6.0.1"
+    },
+    "devDependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.1"
+    }
 }
