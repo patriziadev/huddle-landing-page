@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/patriziadev/huddle-landing-page#readme",
     "dependencies": {
-        "node-sass": "^7.0.1"
+        "node-sass": "^9.0.0"
     },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.15.1"
