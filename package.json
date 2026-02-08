@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "scss": "node-sass --watch scss -o css"
+        "scss": "sass --watch scss css"
     },
     "repository": {
         "type": "git",
@@ -17,10 +17,8 @@
         "url": "https://github.com/patriziadev/huddle-landing-page/issues"
     },
     "homepage": "https://github.com/patriziadev/huddle-landing-page#readme",
-    "dependencies": {
-        "node-sass": "^9.0.0"
-    },
     "devDependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.1"
+        "@fortawesome/fontawesome-free": "^5.15.1",
+        "sass": "^1.97.3"
     }
 }

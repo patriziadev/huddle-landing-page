@@ -1,0 +1,406 @@
+main #grow p,
+main #conversation p,
+main #users p, main #intro p {
+  width: 70vw;
+  max-width: 500px;
+}
+
+.content {
+  width: 90vw;
+  max-width: 1400px;
+  margin: auto;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 10px;
+  margin: 0;
+}
+
+header {
+  grid-area: header;
+  width: 90vw;
+  max-width: 1170px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+header img {
+  width: 25vw;
+  max-width: 240px;
+}
+header button {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  color: hsl(322, 100%, 66%);
+  background: #fff;
+  border-radius: 50px;
+  border: 1px solid hsl(322, 100%, 66%);
+  padding: 0.8vw 20px;
+  cursor: pointer;
+}
+header button:hover {
+  color: #fff;
+  background: hsl(322, 100%, 66%);
+  -webkit-transition: color 1s, background-color 1s;
+  -moz-transition: color 1s, background-color 1s;
+  -o-transition: color 1s, background-color 1s;
+  transition: color 1s, background-color 1s;
+}
+
+main {
+  grid-area: main;
+  font-family: "Open Sans", sans-serif;
+  color: hsl(192, 100%, 9%);
+  margin: 40px auto;
+}
+main h1 {
+  text-transform: capitalize;
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+}
+main h2 {
+  text-transform: capitalize;
+  font-size: 36px;
+  font-family: "Poppins", sans-serif;
+}
+main #intro {
+  text-align: center;
+  height: calc(100vh - 40px - 40px);
+  margin: 0;
+}
+main #intro #intro-content {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+main #intro p {
+  margin: auto;
+}
+main #intro button {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  color: #fff;
+  background: hsl(322, 100%, 66%);
+  border-radius: 50px;
+  border: 1px solid hsl(322, 100%, 66%);
+  padding: min(3vw, 20px) min(9vw, 90px);
+  cursor: pointer;
+}
+main #intro button:hover {
+  color: hsl(322, 100%, 66%);
+  background: #fff;
+  -webkit-transition: color 1s, background-color 1s;
+  -moz-transition: color 1s, background-color 1s;
+  -o-transition: color 1s, background-color 1s;
+  transition: color 1s, background-color 1s;
+}
+main #intro button {
+  box-shadow: 0 3px 10px #c3c3c3;
+  margin: 35px 0;
+}
+main #image img {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+main #image .fadeIn {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0px) scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50px) scale(1);
+  }
+}
+main #image {
+  /* Firefox < 16 */
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0px) scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50px) scale(1);
+  }
+}
+main #image {
+  /* Safari, Chrome and Opera > 12.1 */
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0px) scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50px) scale(1);
+  }
+}
+main #image {
+  /* Opera */
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0px) scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50px) scale(1);
+  }
+}
+main #numbers {
+  display: flex;
+  justify-content: space-around;
+}
+main #numbers > div {
+  margin: auto;
+  padding: 40px 0;
+}
+main #numbers .icon {
+  width: 2em;
+}
+main #numbers .data {
+  font-size: 70px;
+  font-weight: 700;
+}
+main #numbers .name {
+  text-align: center;
+  color: #9a9a9a;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+main #grow,
+main #conversation,
+main #users {
+  display: flex;
+  align-items: center;
+}
+main #grow img,
+main #conversation img,
+main #users img {
+  width: 100%;
+}
+main #grow > div,
+main #conversation > div,
+main #users > div {
+  padding: 2vw 5vw;
+}
+main #conversation {
+  margin: 200px 0;
+}
+main #grow,
+main #users {
+  background: hsl(207, 100%, 98%);
+  margin: 150px 0;
+  position: relative;
+}
+main #grow::before {
+  background: url("/images/bg-section-top-desktop-1.svg");
+  background-position: center;
+  background-size: cover;
+  content: " ";
+  height: 165px;
+  width: 100%;
+  position: absolute;
+  top: -165px;
+}
+main #grow::after {
+  background: url("/images/bg-section-bottom-desktop-1.svg");
+  background-position: center;
+  background-size: cover;
+  content: " ";
+  height: 135px;
+  width: 100%;
+  position: absolute;
+  bottom: -135px;
+}
+main #users::before {
+  background: url("/images/bg-section-top-desktop-2.svg");
+  background-position: center;
+  background-size: cover;
+  content: " ";
+  height: 150px;
+  width: 100%;
+  position: absolute;
+  top: -150px;
+}
+main #users::after {
+  background: url("/images/bg-section-bottom-desktop-2.svg");
+  background-position: center;
+  background-size: cover;
+  content: " ";
+  height: 135px;
+  width: 100%;
+  position: absolute;
+  bottom: -135px;
+}
+main #build-community {
+  margin-bottom: 10em;
+  padding: 5vw 0;
+  text-align: center;
+}
+main #build-community button {
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  color: #fff;
+  background: hsl(322, 100%, 66%);
+  border-radius: 50px;
+  border: 1px solid hsl(322, 100%, 66%);
+  padding: 20px 90px;
+  cursor: pointer;
+}
+main #build-community button:hover {
+  color: hsl(322, 100%, 66%);
+  background: #fff;
+  -webkit-transition: color 1s, background-color 1s;
+  -moz-transition: color 1s, background-color 1s;
+  -o-transition: color 1s, background-color 1s;
+  transition: color 1s, background-color 1s;
+}
+main #build-community button {
+  box-shadow: 0 3px 10px #c3c3c3;
+}
+
+footer {
+  grid-area: footer;
+  color: #fff;
+  background: hsl(192, 100%, 9%);
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+footer::before {
+  background: url("/images/bg-footer-top-desktop.svg");
+  background-position: center;
+  background-size: cover;
+  content: " ";
+  height: 140px;
+  width: 100%;
+  position: absolute;
+  top: -140px;
+}
+footer h3 {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+footer p {
+  font-size: 0.8em;
+  width: 23em;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+footer p img {
+  float: left;
+  margin-right: 15px;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+footer a:hover {
+  filter: brightness(0.7) invert(0) opacity(1);
+}
+footer #contacts {
+  display: flex;
+  justify-content: space-around;
+}
+footer #contacts .left,
+footer #contacts .right {
+  width: 40vw;
+}
+footer #contacts .image {
+  filter: brightness(0) invert(1) opacity(1);
+}
+footer #contacts .social i {
+  padding: 40px 15px 0 0;
+}
+footer #contacts .social i span {
+  display: none;
+}
+footer #contacts form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  min-width: 280px;
+}
+footer #contacts form input {
+  flex: 1 1 60%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+footer #contacts form button {
+  flex: 0 0 20%;
+  margin: 5px 0 0 20px;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  color: #fff;
+  background: hsl(322, 100%, 66%);
+  border-radius: 5px;
+  border: 1px solid hsl(322, 100%, 66%);
+  padding: 8px 30px;
+  cursor: pointer;
+}
+footer #contacts form button:hover {
+  color: hsl(322, 100%, 66%);
+  background: #fff;
+  -webkit-transition: color 1s, background-color 1s;
+  -moz-transition: color 1s, background-color 1s;
+  -o-transition: color 1s, background-color 1s;
+  transition: color 1s, background-color 1s;
+}
+footer #disclaimer p {
+  text-align: center;
+  margin: 50px 0 10px;
+  width: 100%;
+}
+
+@media screen and (max-width: 769px) {
+  #numbers,
+  #conversation {
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+  }
+  #grow,
+  #users {
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: auto;
+  }
+  footer::before {
+    background: url("/images/bg-footer-top-mobile.svg") no-repeat;
+    background-size: 100% 50%;
+    top: -70px;
+  }
+  footer #contacts {
+    flex-wrap: wrap-reverse;
+  }
+  footer #contacts .left,
+  footer #contacts .right {
+    flex-direction: column-reverse;
+    width: 80vw;
+    margin: 40px auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
